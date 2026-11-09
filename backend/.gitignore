@@ -1,0 +1,5 @@
+# Dependencias: pesan mucho y se reinstalan con "npm install"
+node_modules/
+
+# Variables de entorno y credenciales
+.env
