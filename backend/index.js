@@ -1,11 +1,19 @@
 // =============================================================
 // index.js - Punto de entrada del backend de JAC Connect
 // =============================================================
-process.loadEnvFile(); // carga las variables del archivo .env
+const path = require('path');
+try {
+  process.loadEnvFile(path.join(__dirname, '.env'));
+} catch {
+  try {
+    process.loadEnvFile();
+  } catch {}
+}
 
 const express = require('express');
 const cors = require('cors');
 const usuarioRoutes = require('./src/routes/usuario.routes');
+const proyectoRoutes = require('./src/routes/proyecto.routes');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -14,6 +22,7 @@ const port = process.env.PORT || 3000;
 app.use(cors());         // permite que Angular (puerto 4200) consuma esta API
 app.use(express.json()); // convierte el JSON que llega en un objeto (req.body)
 app.use('/api/usuarios', usuarioRoutes);
+app.use('/api/proyectos', proyectoRoutes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {
