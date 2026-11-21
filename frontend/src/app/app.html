@@ -1,8 +1,25 @@
-<nav class="navbar bg-success" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-success" data-bs-theme="dark">
   <div class="container">
-    <span class="navbar-brand">
-      <i class="bi bi-people-fill"></i> JAC Connect
-    </span>
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" routerLink="/">
+      <i class="bi bi-houses-fill"></i> JAC Connect
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar" aria-controls="menuNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menuNavbar">
+      <ul class="navbar-nav ms-auto gap-2">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/usuarios" routerLinkActive="active">
+            <i class="bi bi-people-fill me-1"></i> Usuarios
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/proyectos" routerLinkActive="active">
+            <i class="bi bi-folder-fill me-1"></i> Proyectos
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 

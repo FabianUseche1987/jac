@@ -1,10 +1,17 @@
 // =============================================================
-// db.js - Conexión a la base de datos MySQL (Hostinger)
+// db.js - Conexión a la base de datos MySQL
 // Crea un "pool" de conexiones que reutilizan todos los repositorios.
 // =============================================================
+const path = require('path');
 
-// Carga las variables del archivo .env en process.env (función nativa de Node 24)
-process.loadEnvFile();
+// Carga las variables del archivo .env asegurando la ruta correcta
+try {
+  process.loadEnvFile(path.join(__dirname, '../../.env'));
+} catch {
+  try {
+    process.loadEnvFile();
+  } catch {}
+}
 
 const mysql = require('mysql2/promise');
 
