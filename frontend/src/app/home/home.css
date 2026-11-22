@@ -1,0 +1,9 @@
+/* La tarjeta se levanta un poco al pasar el mouse, para que se note que es clicable */
+.opcion {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.opcion:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
