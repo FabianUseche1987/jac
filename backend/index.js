@@ -14,6 +14,7 @@ const express = require('express');
 const cors = require('cors');
 const usuarioRoutes = require('./src/routes/usuario.routes');
 const proyectoRoutes = require('./src/routes/proyecto.routes');
+const reunionRoutes = require('./src/routes/reunion.routes');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -23,6 +24,7 @@ app.use(cors());         // permite que Angular (puerto 4200) consuma esta API
 app.use(express.json()); // convierte el JSON que llega en un objeto (req.body)
 app.use('/api/usuarios', usuarioRoutes);
 app.use('/api/proyectos', proyectoRoutes);
+app.use('/api/reuniones', reunionRoutes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {
