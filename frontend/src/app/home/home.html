@@ -9,8 +9,9 @@
   </div>
 
   <!-- ===== Opciones: una tarjeta por módulo ===== -->
+  <!-- 1 columna en celular, 2 en tableta y 4 en escritorio -->
   <div class="row g-4 justify-content-center">
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-6 col-lg-3">
       <a routerLink="/usuarios" class="card opcion h-100 text-decoration-none shadow-sm">
         <div class="card-body text-center p-4">
           <i class="bi bi-people-fill display-4 text-success"></i>
@@ -20,7 +21,7 @@
       </a>
     </div>
 
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-6 col-lg-3">
       <a routerLink="/proyectos" class="card opcion h-100 text-decoration-none shadow-sm">
         <div class="card-body text-center p-4">
           <i class="bi bi-folder-fill display-4 text-success"></i>
@@ -30,17 +31,25 @@
       </a>
     </div>
 
-<div class="col-12 col-md-4">
+    <div class="col-12 col-md-6 col-lg-3">
       <a routerLink="/reuniones" class="card opcion h-100 text-decoration-none shadow-sm">
         <div class="card-body text-center p-4">
-          <i class="bi bi-folder-fill display-4 text-success"></i>
+          <i class="bi bi-calendar-event-fill display-4 text-success"></i>
           <h2 class="h4 mt-3 text-dark">Reuniones</h2>
-          <p class="text-muted mb-0">Verifica y programa reuniones de la junta </p>
+          <p class="text-muted mb-0">Programa y administra las reuniones de la junta.</p>
         </div>
       </a>
     </div>
 
+    <div class="col-12 col-md-6 col-lg-3">
+      <a routerLink="/predios" class="card opcion h-100 text-decoration-none shadow-sm">
+        <div class="card-body text-center p-4">
+          <i class="bi bi-house-door-fill display-4 text-success"></i>
+          <h2 class="h4 mt-3 text-dark">Predios</h2>
+          <p class="text-muted mb-0">Registra y consulta los predios y bienes de la comunidad.</p>
+        </div>
+      </a>
+    </div>
   </div>
 
 </div>
-
