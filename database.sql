@@ -37,3 +37,25 @@ CREATE TABLE IF NOT EXISTS proyectos (
   junta_id INT(11) NULL,
   fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- -------------------------------------------------------------
+-- Tabla predios (módulo Predios o bienes comunales)
+-- Campos tomados del formulario "Registrar Nuevo Predio".
+-- Valores permitidos (los valida predio.service.js):
+--   estrato:     1 a 6
+--   tipo_predio: residencial, comercial, lote, comunitario
+--   estado:      activo, inactivo
+-- La matrícula inmobiliaria es única: el backend responde
+-- "Ya existe un predio con esa matrícula inmobiliaria" si se repite.
+-- -------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS predios (
+  id INT(11) AUTO_INCREMENT PRIMARY KEY,
+  direccion VARCHAR(150) NOT NULL,
+  barrio VARCHAR(100) NOT NULL,
+  matricula_inmobiliaria VARCHAR(30) NOT NULL UNIQUE,
+  estrato TINYINT NOT NULL DEFAULT 1 CHECK (estrato BETWEEN 1 AND 6),
+  tipo_predio ENUM('residencial', 'comercial', 'lote', 'comunitario') NOT NULL DEFAULT 'residencial',
+  propietario VARCHAR(150) NOT NULL,
+  estado ENUM('activo', 'inactivo') NOT NULL DEFAULT 'activo',
+  fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
