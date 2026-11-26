@@ -37,3 +37,16 @@ CREATE TABLE IF NOT EXISTS proyectos (
   junta_id INT(11) NULL,
   fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE IF NOT EXISTS reuniones (
+  id INT(11) AUTO_INCREMENT PRIMARY KEY,
+  titulo VARCHAR(150) NOT NULL,
+  descripcion TEXT NULL,
+  tipo ENUM('ordinaria', 'asamblea', 'comite', 'comunitaria') NOT NULL DEFAULT 'ordinaria',
+  fecha DATE NOT NULL,
+  hora TIME NOT NULL,
+  lugar VARCHAR(200) NOT NULL,
+  estado ENUM('programada', 'realizada', 'cancelada') NOT NULL DEFAULT 'programada',
+  junta_id INT(11) NOT NULL DEFAULT 1,
+  fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
